@@ -2,6 +2,10 @@
 
 ## 0.48.1 (Unreleased)
 
+### Added
+
+- Added typed GCP ready-pool cohorts bound to immutable boot-image or disk-snapshot provenance while allowing capacity fallback across zones.
+
 ### Fixed
 
 - Parsed nested JUnit suites without double-counting aggregates, preserving failed-case details and deriving missing counters so opt-in failure gating catches counterless nested failures.
