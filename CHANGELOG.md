@@ -16,6 +16,7 @@
 - Fixed Parallels clone destinations to pass the configured parent directory to `prlctl --dst`, letting Parallels name and create the VM bundle beneath it.
 - Preserved exclusive ready-pool lease ownership across typed and legacy pools, including existing duplicate records, and prevented expired or quarantined borrows from becoming ready through return or re-registration.
 - Bound typed ready-pool capacity to canonical provider identities, migrated desired state to fixed-size v2 keys without legacy-reader exposure, and routed returns to fail-closed drain cleanup when provider or lease identity evidence changes.
+- Verified GCP boot images and disk snapshots by immutable resource ID before provisioning, rejected machine images for typed provenance, and deleted created instances whose boot-disk source could not be proven.
 - Reduced SSH startup round trips by checking readiness before transport diagnosis and skipping unused run telemetry when no coordinator run handle exists.
 - Published exact AWS allocation identity and prepared account scope before readiness and kept explicit Stop observing pending creation cleanup, while preserving allocation claims through storage failures and local ownership until deletion is confirmed.
 - Kept brokered native checkpoint creation waiting through exact coordinator-owned recovery, without repeating capture, while bounding status requests and preserving cancellation and terminal failures.
